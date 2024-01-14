@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AR - Mode</title>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+    <script src="./aframe/aframe-ar-nft.js"></script>
+    <script src="./aframe/aframe-extras.js"></script>
+    <script src="./js/jsQR.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <link rel="stylesheet" href="./css/ar.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+
+  <body>
+    <!-- Layout Guide -->
+    <div class="guide-container">
+      <img class="qrcode-image" src="./asset/image/qrcode-guide.jpg" alt="QR Code"/>
+      <p class="instruction-text">
+        Vui lòng đưa Camera đến gần QR Code bạn muốn quét để xem nội dung của khu vực!
+      </p>
+      <button class="button-ok" onclick="closeGuide()">Tôi đã hiểu</button>
+    </div>
+
+    <div class="introduce">
+      <div class="group-logo">
+        <!-- <img class="logo" src="./asset/image/logo.png" alt="logo"/> -->
+        <span class="name">Đại học Bách Khoa</span>
+      </div>
+    </div>
+
+    <div class="group-canvas">
+      <canvas id="canvas-video" hidden></canvas>
+      <div class="spinner"></div>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <div class="title-popup-text"></div>
+        <span id="popup-text" class="popup-text"></span>
+        <button id="close-button" class="close-button" onclick="closePopupText()">
+          <i class="fa fa-times-circle"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="popup-model-view" class="popup">
+      <div class="popup-content">
+        <div class="title-popup-model"></div>
+        <model-viewer id="viewmodel" alt="model" src="" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        <button id="close-button" class="close-button" onclick="closePopupModel()">
+          <i class="fa fa-times-circle"></i>
+        </button>
+      </div>
+    </div>
+
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" gesture-detector id="scene">
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script src="./js/ar.js"></script>
+  </body>
+</html>

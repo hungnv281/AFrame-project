@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.browser-ui {
+  display: none;
+}
+
+.room-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 8px 0px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn-pause {
+  position: fixed;
+  right: 12px;
+  top: 8px;
+  color: white;
+  z-index: 1;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btn-audio {
+  position: fixed;
+  z-index: 1;
+  font-size: 18px;
+  cursor: pointer;
+  right: 56px;
+  color: white;
+  top: 8px;
+  border: 1px solid white;
+  padding: 0px 8px;
+}
+
+.btn-menu {
+  position: fixed;
+  left: 12px;
+  top: 8px;
+  color: white;
+  z-index: 2;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 220px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  top: 36px;
+  border: none;
+  font-size: 18px;
+  transition: 0.6s ease;
+  transition-property: left;
+  backdrop-filter: blur(15px);
+}
+
+.room-list {
+  list-style-type: none;
+  padding-left: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.room-list li {
+  width: 100%;
+  text-align: center;
+  padding: 8px 0px;
+  cursor: pointer;
+}
+
+.room-list li:hover {
+  background: rgba(103, 115, 131, 0.8);
+}
+
+.focus {
+  background: rgba(103, 115, 131, 0.8);
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background: #111;
+}
+
+.main-container .image-container {
+  /* flex: 1; */
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.main-container h1 {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: 10px;
+  z-index: 100;
+  text-shadow: 2px 16px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.container-loading {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: calc(50% - 100px);
+}
+
+.container-loading img {
+  animation: rotation 4s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

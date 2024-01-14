@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VR - Mode</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.1/dist/aframe-extras.min.js"></script>
+  <link rel="stylesheet" href="./css/vr.css" />
+</head>
+
+<body>
+  <!-- <div class="container-loading">
+      <img width="100px" height="100px" src="https://cdn-icons-png.flaticon.com/512/6356/6356659.png" alt="Image loading"/>
+    </div> -->
+  <a-scene id="main-scene" xrweb vr-mode-ui="enabled: true" visible="false">
+    <a-entity id="laser" laser-controls raycaster="objects: .intersectable" line="color: red"></a-entity>
+    <a-entity raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-entity>
+    <a-entity id="vr-camera" active="true" position="0 1.6 0" camera look-controls rotation="0 0 0" ></a-entity>
+    <a-plane color="black" class="content-bk_gate" scale="5.5 5.5 5.5" position="-25.5 0 -12" rotation="0 90 0"
+      width="3.2" height="2" cursor-listener visible="false">
+      <a-plane color="white" position="0 0.1 0.1" width="2.5" height="1.3">
+        <a-video src="#intro_video" geometry="width: 2.4; height: 1.2;" position="0 0 0.01"></a-video>
+        <!-- <a-videosphere  src="#intro_video" geometry="width: 2.4; height: 1.2;" position="0 0 0.01"></a-videosphere> -->
+
+      </a-plane>
+      <a-image class="clickable intersectable videoControl" src="#play-button" width="0.2" height="0.2"
+        position="1 -0.83 0.05" play-pause></a-image>
+      <a-image class="clickable intersectable close-popup-bk_gate" position="1.3 -0.83 0.05" scale="0.5 0.5 0.5"
+        width="0.4" height="0.4" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+    <a-plane class="content content-sanh-c1" scale="2 2 2" position="8 1.75 -9" cursor-listener width="6" height="3.5"
+      visible="false">
+      <a-text class="aText" position="-0.4 0.1 0.1" scale="0.5 0.5 0.5" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json"
+        value="Tòa nhà C1 Bách Khoa là một tòa nhà nằm tại trường Đại học Bách Khoa Hà Nội, Việt Nam. Tòa nhà này có nhiều tầng và được sử dụng cho các hoạt động giảng dạy, nghiên cứu và hành chính của trường. Đây là một trong những tòa nhà quan trọng và đặc biệt của trường Đại học Bách Khoa Hà Nội."
+        color="black"></a-text>
+      <a-image class="aImage" position="-1.7 0 0.1" scale="1 1 1" width="2" height="2"
+        src="./asset/image/Toa-nha_C1.png"></a-image>
+      <a-image class="clickable intersectable close-popup-sanh-c1" position="2.6 1.4 0.1" scale="1 1 1" width="0.3"
+        height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+    <a-plane class="content content-sanh-c1-new" scale="5 5 5" position="22 1.75 0.5" cursor-listener width="6"
+      height="3" visible="false">
+      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.1 0.1" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json"
+        value="Tòa nhà C1 Bách Khoa là một tòa nhà nằm tại trường Đại học Bách Khoa Hà Nội, Việt Nam. Tòa nhà này có nhiều tầng và được sử dụng cho các hoạt động giảng dạy, nghiên cứu và hành chính của trường. Đây là một trong những tòa nhà quan trọng và đặc biệt của trường Đại học Bách Khoa Hà Nội."
+        color="black"></a-text>
+      <a-image class="aImage" position="-1.7 0 0.1" scale="1 1 1" width="2" height="2"
+        src="./asset/image/Toa-nha_C1.png"></a-image>
+      <a-image class="clickable intersectable close-popup-sanh-c1-new" position="2.6 1.2 0.1" scale="1 1 1" width="0.3"
+        height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+    <a-plane class="content content-sanh-c1-model" rotation="0 -130 0" scale="2.5 2.5 2.5" color="white"
+      position="5 1 14" cursor-listener width="6" height="3" visible="false">
+      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.35 0.1" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json" value="Đầu đao mái tháp trang trí rồng" color="white"></a-text>
+      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.1 0.1" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json" value="Cao 33,7 cm; rộng 21 cm." color="white"></a-text>
+      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 -0.15 0.1" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json" value="Tượng rồng gắn trên góc mái tháp." color="white"></a-text>
+      <a-entity gltf-model="#model2-2" scale="0.35 0.35 0.35" position="-1.6 0 0.2" animation-mixer></a-entity>
+      <a-image class="clickable intersectable close-popup-sanh-c1-model" position="2.5 1.2 0.2" scale="1 1 1"
+        width="0.3" height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+    <a-plane class="content content-sanh-c1-c2" position="15 2.5 -14" scale="5 5 5" cursor-listener width="6" height="3"
+      visible="false">
+      <a-text negate="false" color="black" scale="0.5 0.5 0.5" position="-0.4 0.1 0.1" align="left"
+        font="./asset/font/BeVietnam-Bold-msdf.json"
+        value="Đối với người Chăm thì Nandin biến thành bò thần Kapin và trở thành nhân vật trong truyện cổ dân gian Chăm theo đó con bò này được thờ như là một vị thần có nhiều quyền năng, họ thần tượng con bò đực Nandin. Bò Nandin có vai trò rất quan trọng không những trong kiến trúc, điêu khắc mà còn trong đời sống tâm linh tín ngưỡng tôn giáo của người Chăm mà ở bất kì địa vị nào trong xã hội, quý tộc, tu sĩ, thường dân. Tầng lớp Sudra (nô lệ) khi chết đều hỏa táng đều có hình tượng bò Nandin trong dàn hỏa táng và nó đã đi vào đời thường của từng con người Champa xưa cũng như người Chăm hiện nay"
+        color="black"></a-text>
+      <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/bo-nandin.jpg"></a-image>
+      <a-image class="clickable intersectable close-popup-sanh-c1-c2" position="2.5 1 0.1" scale="1 1 1" width="0.3"
+        height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+    <a-assets>
+      <img id="bk_gate" src="./asset/image/bk_gate.jpg" />
+      <img id="sanh-c1" src="./asset/image/sanh-c1.jpg" />
+      <img id="sanh-c1-c2" src="./asset/image/sanh-c1-c2.jpg" />
+      <img id="love_street" src="./asset/image/love_street.jpg" />
+      <img id="library" src="./asset/image/library.jpg" />
+      <img id="play-button" src="./asset/image/play-button.png" />
+      <img id="pause-button" src="./asset/image/pause-button.png" />
+      <a-asset-item id="model2-1" src="./asset/image-tracking/trex/scene.gltf"></a-asset-item>
+      <a-asset-item id="model2-2" src="asset/model/model-vr-1.gltf"></a-asset-item>
+      <video id="intro_video" controls src="./asset/video/intro_video.mp4"></video>
+      <audio id="bg_mp3" src="./asset/audio/bg_mp3.mp3"></audio>
+      <audio id="audio-sanh-c1" src="./asset/audio/audio-sanh-c1.mp3"></audio>
+      <img id="icon-change-room" src="./asset/image/change-room-icon.png" />
+    </a-assets>
+    <a-sound id="audio-main" src="#bg_mp3" loop="true"></a-sound>
+    <a-sound id="audio-seconds" src="#audio-sanh-c1" loop="true"></a-sound>
+
+    <a-entity id="items-bk_gate" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40.5 -10 -5"
+        rotation="0 90 0" scale="4 2 4">
+        <a-text negate="false" color="black" font="./asset/font/BeVietnam-Bold-msdf.json" value="Next 2-2"
+          position="0 -0.5 0" scale="1 2 3" rotation="0 0 0" align="center" color="white"></a-text>
+      </a-image>
+      <a-entity gltf-model="#model2-1" scale="10 10 10" position="-7 -15 -50" animation-mixer></a-entity>
+
+      <a-plane class="clickable intersectable item" color="red" position="-25.5 0 -12" id="infor-bk_gate" scale="4 4 4"
+        rotation="0 90 0" geometry="width: 1.2; height: 0.5;">
+        <a-text negate="false" font="./asset/font/BeVietnam-Bold-msdf.json" value="Giới thiệu" position="0 0.05 0.05"
+          scale="0.7 0.7 0.7" align="center"></a-text>
+      </a-plane>
+    </a-entity>
+
+    <a-entity id="items-sanh-c1" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+        rotation="0 90 0" scale="3 1.5 3">
+        <a-text value="Next 2-3" position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-40 -10 -25"
+        rotation="0 45 0" scale="4 2 4">
+        <a-text value="Previous 2-1" position="0 -0.5 0" scale="1 2 2" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+      <a-sphere id="infor-sanh-c1" position="10 0.75 -10" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.4 0.4 0.4"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-sphere id="infor-sanh-c1-new" position="25 0.75 0" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.5 0.5 0.5"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-sphere id="infor-sanh-c1-model" position="5 1 15" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.5 0.5 0.5"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+    </a-entity>
+
+    <a-entity id="items-sanh-c1-c2" visible="false">
+      <a-sphere id="infor-sanh-c1-c2" position="18 -2 -15" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.6 0.6 0.6"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous 2-2" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
+    <div class="browser-ui">
+      <div class="btn-menu">Hidden</div>
+      <div class="room-title">Cổng đại học Bách Khoa</div>
+      <div class="btn-pause">Play</div>
+      <div class="btn-audio" id="control-audio">Play Audio</div>
+      <div class="sidebar">
+        <ul class="room-list">
+          <li class="room focus">Cổng đại học Bách Khoa</li>
+          <li class="room">Sảnh tòa nhà C1</li>
+          <li class="room">Sảnh toàn nhà C1 - C2</li>
+          <li class="room">Đường tình yêu Bách Khoa</li>
+          <li class="room">Khuân viên thư viện Tạ Quang Bửu</li>
+        </ul>
+      </div>
+    </div>
+    <a-sky id="main-sky" src="#bk_gate"></a-sky>
+  </a-scene>
+  <script src="./js/vr.js"></script>
+</body>
+
+</html>
