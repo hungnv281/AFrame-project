@@ -19,6 +19,20 @@
     <a-entity id="laser" laser-controls raycaster="objects: .intersectable" line="color: red"></a-entity>
     <a-entity raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-entity>
     <a-entity id="vr-camera" active="true" position="0 1.6 0" camera look-controls rotation="0 0 0" ></a-entity>
+
+    <a-plane class="content content-sanh-b1" scale="2 2 2" position="8 1.75 -9" cursor-listener width="6" height="3.5"
+      visible="false">
+      <a-text class="aText" position="-0.4 0.1 0.1" scale="0.5 0.5 0.5" align="left" negate="false" color="black"
+        font="./asset/font/BeVietnam-Bold-msdf.json"
+        value="Tháng 7 vừa qua, công ty TNHH Sơn DDM Việt Nam thi công hoàn thiện dự án tòa nhà B1 – Đại học Bách Khoa Hà Nội (trường công nghệ thông tin – Đại học Bách Khoa Hà Nội). Nhân dịp này, giám đốc DDM Việt Nam đã có cuộc trao đổi cùng chuyên gia nước ngoài về các dòng sơn, sản phẩm nội thất mới nhất với hơn 10 năm kinh nghiệm-Mr.Liang khi có dịp thăm quan và trao đổi kinh nghiệm về kỹ thuật thi công sơn đá tự nhiên, cách thức lựa chọn sản phẩm,… tại đây.
+        "
+        color="black"></a-text>
+      <a-image class="aImage" position="-1.7 0 0.1" scale="1 1 1" width="2" height="2"
+        src="./asset/image/nha-b1-2d.jpg"></a-image>
+      <a-image class="clickable intersectable close-popup-sanh-b1" position="2.6 1.4 0.1" scale="1 1 1" width="0.3"
+        height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+
     <a-plane color="black" class="content-bk_gate" scale="5.5 5.5 5.5" position="-25.5 0 -12" rotation="0 90 0"
       width="3.2" height="2" cursor-listener visible="false">
       <a-plane color="white" position="0 0.1 0.1" width="2.5" height="1.3">
@@ -31,6 +45,7 @@
       <a-image class="clickable intersectable close-popup-bk_gate" position="1.3 -0.83 0.05" scale="0.5 0.5 0.5"
         width="0.4" height="0.4" src="./asset/image/icon-close.png"></a-image>
     </a-plane>
+
     <a-plane class="content content-sanh-c1" scale="2 2 2" position="8 1.75 -9" cursor-listener width="6" height="3.5"
       visible="false">
       <a-text class="aText" position="-0.4 0.1 0.1" scale="0.5 0.5 0.5" align="left" negate="false" color="black"
@@ -42,6 +57,7 @@
       <a-image class="clickable intersectable close-popup-sanh-c1" position="2.6 1.4 0.1" scale="1 1 1" width="0.3"
         height="0.3" src="./asset/image/icon-close.png"></a-image>
     </a-plane>
+    
     <a-plane class="content content-sanh-c1-new" scale="5 5 5" position="22 1.75 0.5" cursor-listener width="6"
       height="3" visible="false">
       <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.1 0.1" align="left" negate="false" color="black"
@@ -53,34 +69,69 @@
       <a-image class="clickable intersectable close-popup-sanh-c1-new" position="2.6 1.2 0.1" scale="1 1 1" width="0.3"
         height="0.3" src="./asset/image/icon-close.png"></a-image>
     </a-plane>
-    <a-plane class="content content-sanh-c1-model" rotation="0 -130 0" scale="2.5 2.5 2.5" color="white"
-      position="5 1 14" cursor-listener width="6" height="3" visible="false">
-      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.35 0.1" align="left" negate="false" color="black"
-        font="./asset/font/BeVietnam-Bold-msdf.json" value="Đầu đao mái tháp trang trí rồng" color="white"></a-text>
-      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 0.1 0.1" align="left" negate="false" color="black"
-        font="./asset/font/BeVietnam-Bold-msdf.json" value="Cao 33,7 cm; rộng 21 cm." color="white"></a-text>
-      <a-text class="aText" scale="0.6 0.6 0.6" position="-0.4 -0.15 0.1" align="left" negate="false" color="black"
-        font="./asset/font/BeVietnam-Bold-msdf.json" value="Tượng rồng gắn trên góc mái tháp." color="white"></a-text>
-      <a-entity gltf-model="#model2-2" scale="0.35 0.35 0.35" position="-1.6 0 0.2" animation-mixer></a-entity>
-      <a-image class="clickable intersectable close-popup-sanh-c1-model" position="2.5 1.2 0.2" scale="1 1 1"
-        width="0.3" height="0.3" src="./asset/image/icon-close.png"></a-image>
-    </a-plane>
-    <a-plane class="content content-sanh-c1-c2" position="15 2.5 -14" scale="5 5 5" cursor-listener width="6" height="3"
+
+    <a-plane class="content content-sanh-c1-c2" position="-10 2.5 14" scale="5 5 5" cursor-listener width="6" height="3"
       visible="false">
       <a-text negate="false" color="black" scale="0.5 0.5 0.5" position="-0.4 0.1 0.1" align="left"
         font="./asset/font/BeVietnam-Bold-msdf.json"
-        value="Đối với người Chăm thì Nandin biến thành bò thần Kapin và trở thành nhân vật trong truyện cổ dân gian Chăm theo đó con bò này được thờ như là một vị thần có nhiều quyền năng, họ thần tượng con bò đực Nandin. Bò Nandin có vai trò rất quan trọng không những trong kiến trúc, điêu khắc mà còn trong đời sống tâm linh tín ngưỡng tôn giáo của người Chăm mà ở bất kì địa vị nào trong xã hội, quý tộc, tu sĩ, thường dân. Tầng lớp Sudra (nô lệ) khi chết đều hỏa táng đều có hình tượng bò Nandin trong dàn hỏa táng và nó đã đi vào đời thường của từng con người Champa xưa cũng như người Chăm hiện nay"
+        value="Tòa nhà C2 tại Đại học Bách Khoa là một trong những tòa nhà chính của trường, nằm ở trung tâm của khuôn viên đại học. Tòa nhà này được sử dụng cho nhiều mục đích khác nhau, bao gồm giảng đường, phòng học, phòng thí nghiệm và văn phòng quản lý. Đây là một trong những tòa nhà quan trọng và sầm uất nhất tại trường Đại học Bách Khoa."
         color="black"></a-text>
-      <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/bo-nandin.jpg"></a-image>
+      <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/sanh-c2-2d.jpg"></a-image>
       <a-image class="clickable intersectable close-popup-sanh-c1-c2" position="2.5 1 0.1" scale="1 1 1" width="0.3"
         height="0.3" src="./asset/image/icon-close.png"></a-image>
     </a-plane>
+    
+
+    <a-plane class="content content-sanh-c7" position="-20 0 6" scale="5 5 5" cursor-listener width="6" height="3"
+      visible="fa6666666666666666666666666666666666666666lse">
+      <a-text negate="false" color="black" scale="0.5 0.5 0.5" position="-0.4 0.1 0.1" align="left"
+        font="./asset/font/BeVietnam-Bold-msdf.json"
+        value="Tòa nhà C7 có tổng diện tích khoảng 40.000 m2 là kết quả đầu ra quan trọng của dự án, tạo ra cho Đại học Bách khoa Hà Nội thêm không gian, phòng làm việc để sắp xếp các phòng, ban, khoa, viện của các trường thuộc trong quá trình tái cấu trúc, chuyển đổi mô hình và thực hiện tự chủ. Toàn bộ diện tích nhà C7 dự kiến bố trí làm các phòng làm việc, phòng nghiên cứu, phòng thí nghiệm và phòng chức năng cho các Trường Điện - Điện tử và Trường Cơ khí.
+        "
+        color="black"></a-text>
+      <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/toa-c7-2d.jpg"></a-image>
+      <a-image class="clickable intersectable close-popup-sanh-c7" position="2.5 1 0.1" scale="1 1 1" width="0.3"
+        height="0.3" src="./asset/image/icon-close.png"></a-image>
+    </a-plane>
+
+    <a-plane class="content content-sanh-thu-vien" position="20 2.5 -14" scale="5 5 5" cursor-listener width="6" height="3"
+    visible="false">
+    <a-text negate="false" color="black" scale="0.5 0.5 0.5" position="-0.4 0.1 0.1" align="left"
+      font="./asset/font/BeVietnam-Bold-msdf.json"
+      value="Thư viện điện tử Tạ Quang Bửu nằm trong quần thể trường Đại học Bách Khoa Hà Nội.
+
+      Ngày 7 tháng 10 năm 2006, thư viện Tạ Quang Bửu – công trình kỉ niệm 50 năm thành lập trường Đại học Bách khoa Hà Nội được khánh thành. Tổng vốn đầu tư cho xây dựng thư viện Tạ Quang Bửu là hơn 200 tỉ đồng. Thư viện Tạ Quang Bửu hiện là một trong những thư viện lớn nhất trong hệ thống thư viện đại học ở Việt Nam, bao gồm 1 toà nhà 10 tầng với tổng diện tích 37.000m².
+      "
+      color="black"></a-text>
+    <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/thu-vien-2d.jpg"></a-image>
+    <a-image class="clickable intersectable close-popup-sanh-thu-vien" position="2.5 1 0.1" scale="1 1 1" width="0.3"
+      height="0.3" src="./asset/image/icon-close.png"></a-image>
+  </a-plane>
+
+  <a-plane class="content content-sanh-love_street" position="15 2.5 -14" scale="5 5 5" cursor-listener width="6" height="3"
+  visible="false">
+  <a-text negate="false" color="black" scale="0.5 0.5 0.5" position="-0.4 0.1 0.1" align="left"
+    font="./asset/font/BeVietnam-Bold-msdf.json"
+    value="Con đường tình yêu ngày thu ấy
+    Hai ta hò hẹn mỗi buổi chiều...
+    Nhớ Bách khoa, nhớ em biết mấy
+    Một chút ngượng ngùng, một chút yêu...
+    Con đường tình yêu (Love road) nằm gần sân C9 và đường đôi chạy qua cổng Parabol và Cổng Trần Đại Nghĩa. Con đường này dài khoảng 50m với hai hàng cây bên đường cùng hai hàng ghế rất đẹp và lãng mạn. Mỗi mùa con đường lại mang một vẻ đẹp riêng, và là địa điểm lý tưởng để các bạn sinh viên check-in. Chiều chiều, đi ngang qua đây, ta lại bắt gặp mấy đôi bạn đang ngồi chuyện trò hay một cô nàng đang đắm mình vào những trang sách, hay đơn giản là một cô nàng trường khác sang chơi."
+    color="black"></a-text>
+  <a-image position="-1.7 0 0.1" scale="1 1 1" width="2" height="2" src="./asset/image/duong-tinh-yeu-2d.jpg"></a-image>
+  <a-image class="clickable intersectable close-popup-sanh-love_street" position="2.5 1 0.1" scale="1 1 1" width="0.3"
+    height="0.3" src="./asset/image/icon-close.png"></a-image>
+</a-plane>
+    
     <a-assets>
       <img id="bk_gate" src="./asset/image/bk_gate.jpg" />
       <img id="sanh-c1" src="./asset/image/sanh-c1.jpg" />
+      <img id="sanh-c7" src="./asset/image/sanh-c7.jpg" />
+      <img id="sanh-b1" src="./asset/image/sanh-b1.jpg" />
+
       <img id="sanh-c1-c2" src="./asset/image/sanh-c1-c2.jpg" />
-      <img id="love_street" src="./asset/image/love_street.jpg" />
-      <img id="library" src="./asset/image/library.jpg" />
+      <img id="sanh-love_street" src="./asset/image/sanh-love_street.jpg" />
+      <img id="sanh-thu-vien" src="./asset/image/sanh-thu-vien.jpg" />
       <img id="play-button" src="./asset/image/play-button.png" />
       <img id="pause-button" src="./asset/image/pause-button.png" />
       <a-asset-item id="model2-1" src="./asset/image-tracking/trex/scene.gltf"></a-asset-item>
@@ -92,6 +143,24 @@
     </a-assets>
     <a-sound id="audio-main" src="#bg_mp3" loop="true"></a-sound>
     <a-sound id="audio-seconds" src="#audio-sanh-c1" loop="true"></a-sound>
+
+    
+    <a-entity id="items-sanh-b1" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+      rotation="0 90 0" scale="3 1.5 3">
+      <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        color="white"></a-text>
+    </a-image>
+      <a-sphere id="infor-sanh-b1" position="5 0 -15" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.6 0.6 0.6"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
 
     <a-entity id="items-bk_gate" visible="false">
       <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40.5 -10 -5"
@@ -106,12 +175,82 @@
         <a-text negate="false" font="./asset/font/BeVietnam-Bold-msdf.json" value="Giới thiệu" position="0 0.05 0.05"
           scale="0.7 0.7 0.7" align="center"></a-text>
       </a-plane>
+
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
+    <a-entity id="items-sanh-c7" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+      rotation="0 90 0" scale="3 1.5 3">
+      <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        color="white"></a-text>
+    </a-image>
+      <a-sphere id="infor-sanh-c7" position="-21 0 6" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.6 0.6 0.6"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
+    <a-entity id="items-sanh-thu-vien" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+      rotation="0 90 0" scale="3 1.5 3">
+      <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        color="white"></a-text>
+    </a-image>
+      <a-sphere id="infor-sanh-thu-vien" position="100 0 -50" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="2 2 2"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
+    <a-entity id="items-sanh-love_street" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+      rotation="0 90 0" scale="3 1.5 3">
+      <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        color="white"></a-text>
+    </a-image>
+      <a-sphere id="infor-sanh-love_street" position="18 -2 -15" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="0.6 0.6 0.6"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
+    </a-entity>
+
+    <a-entity id="items-sanh-c1-c2" visible="false">
+      <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
+      rotation="0 90 0" scale="3 1.5 3">
+      <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        color="white"></a-text>
+    </a-image>
+      <a-sphere id="infor-sanh-c1-c2" position="-10 -2 30" class="clickable intersectable item" radius="1.25"
+        color="#0000AA" scale="1 1 1"
+        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
+      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
+        rotation="0 0 0" scale="4 2 4">
+        <a-text value="Previous room" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
+          color="white"></a-text>
+      </a-image>
     </a-entity>
 
     <a-entity id="items-sanh-c1" visible="false">
       <a-image src="#icon-change-room" class="clickable intersectable item next-room" position="-40 -10 0"
         rotation="0 90 0" scale="3 1.5 3">
-        <a-text value="Next 2-3" position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
+        <a-text value="Next room"  position="0 -0.5 0.2" scale="1 2 2" rotation="0 0 0" align="center"
           color="white"></a-text>
       </a-image>
       <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-40 -10 -25"
@@ -129,18 +268,7 @@
         color="#0000AA" scale="0.5 0.5 0.5"
         animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
     </a-entity>
-
-    <a-entity id="items-sanh-c1-c2" visible="false">
-      <a-sphere id="infor-sanh-c1-c2" position="18 -2 -15" class="clickable intersectable item" radius="1.25"
-        color="#0000AA" scale="0.6 0.6 0.6"
-        animation="property: material.color; from: #00AAFF; to: #0000AA; loop: true; dur: 2000; direction: alternate;"></a-sphere>
-      <a-image src="#icon-change-room" class="clickable intersectable item previous-room" position="-7 -10 30"
-        rotation="0 0 0" scale="4 2 4">
-        <a-text value="Previous 2-2" position="0 -0.5 0.5" scale="11 15 11" rotation="0 0 0" align="center"
-          color="white"></a-text>
-      </a-image>
-    </a-entity>
-
+   
     <div class="browser-ui">
       <div class="btn-menu">Hidden</div>
       <div class="room-title">Cổng đại học Bách Khoa</div>
@@ -148,15 +276,17 @@
       <div class="btn-audio" id="control-audio">Play Audio</div>
       <div class="sidebar">
         <ul class="room-list">
-          <li class="room focus">Cổng đại học Bách Khoa</li>
-          <li class="room">Sảnh tòa nhà C1</li>
-          <li class="room">Sảnh toàn nhà C1 - C2</li>
-          <li class="room">Đường tình yêu Bách Khoa</li>
+          <li class="room">Sảnh toà nhà B1</li>
+          <li class="room ">Cổng đại học Bách Khoa</li>
+          <li class="room">Sảnh toà nhà C7</li>
           <li class="room">Khuân viên thư viện Tạ Quang Bửu</li>
+          <li class="room">Đường tình yêu Bách Khoa</li>
+          <li class="room focus">Sảnh toà nhà C1 - C2</li>
+          <li class="room">Sảnh tòa nhà C1</li>
         </ul>
       </div>
     </div>
-    <a-sky id="main-sky" src="#bk_gate"></a-sky>
+    <a-sky id="main-sky" src="#sanh-c1-c2"></a-sky>
   </a-scene>
   <script src="./js/vr.js"></script>
 </body>

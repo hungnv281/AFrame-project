@@ -1,6 +1,6 @@
 console.log("Initial ====>llllll");
 document.addEventListener("DOMContentLoaded", () => {
-  const images360 = ["bk_gate", "sanh-c1", "sanh-c1-c2","love_street","library"];
+  const images360 = ["sanh-b1", "bk_gate", "sanh-c7", "sanh-thu-vien", "sanh-love_street", "sanh-c1-c2", "sanh-c1"];
   let isInVRMode = false;
   let isOpenSidebar = true;
   let isPauseRotation = true;
@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle event click room
   const clickRoom = (event, roomIndex) => {
     roomTitle.innerHTML = event.target.textContent;
-    console.log('123123',roomTitle);
     mainSky.setAttribute("src", `#${images360[roomIndex]}`);
     removeFocusRoom();
     addFocusRoom(roomIndex);
@@ -64,8 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle event Pause or Play rotation 360 Image
   const clickBtnPause = () => {
+    console.log('1111111111111', isPauseRotation)
     if (isPauseRotation) {
-      vrCamera.setAttribute("animation", "property: rotation; to: 0 360 0; loop: true; dur: infinite");
+      vrCamera.setAttribute("animation", "property: rotation; to: 0 360 0; loop: true; dur: 30000");
     } else {
       const { x, y, z } = vrCamera.getAttribute("rotation");
       vrCamera.removeAttribute("animation");
@@ -89,7 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Detect onClick room on sidebar
   rooms.forEach((room, roomIndex) => {
-    room.addEventListener("click", (event) => clickRoom(event, roomIndex));
+    room.addEventListener("click", (event) => {clickRoom(event, roomIndex)
+      if (!video22.paused) {
+        handlePauseVideo();
+        // video22.currentTime = 0;
+      }
+    });
   });
 
   btnPause.addEventListener("click", clickBtnPause);
@@ -122,13 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   vrCamera.addEventListener("onChange", function (event) {
-    console.log("------------", event.target.value);
   });
 
   // Handle laser pointer scan item
   const handleLaserPointer = (event) => {
     var intersectedElement = event.detail.els[0];
-    console.log("Laser pointer intersects with an object:", intersectedElement);
     if (intersectedElement.classList.contains("intersectable")) {
       const roomId = intersectedElement?.getAttribute("value");
       mainSky.setAttribute("src", `#${roomId}`);
@@ -164,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // popup
       const parentPopup = document.querySelector(`.content-${roomId}`);
       const iconClose = parentPopup?.querySelector(`.close-popup-${roomId}`);
-      iconClose.classList.add("intersectable");
-      iconClose.classList.add("clickable");
+      iconClose?.classList.add("intersectable");
+      iconClose?.classList.add("clickable");
       // Thêm va chạm khi các items hiển thị ra
       for (let j = 0; j < childItems?.length; j++) {
         childItems[j].classList.add("intersectable");
@@ -215,6 +218,8 @@ document.addEventListener("DOMContentLoaded", () => {
         handlePauseVideo();
         video22.currentTime = 0;
       }
+
+     
     });
   });
 
