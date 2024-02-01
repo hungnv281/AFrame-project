@@ -238,6 +238,19 @@ AFRAME.registerComponent("gesture-detector", {
   },
 });
 
+const listDataQRcode = [
+  {
+    id: 1,
+    data: "sanh-c1",
+    title: "Sanh C1",
+    type: "image",
+    url: "./asset/image/Toa-nha_C1.png",
+    sound: "",
+    text: "Tòa nhà C1 Bách Khoa là một tòa nhà nằm tại trường Đại học Bách Khoa Hà Nội, Việt Nam. Tòa nhà này có nhiều tầng và được sử dụng cho các hoạt động giảng dạy, nghiên cứu và hành chính của trường. Đây là một trong những tòa nhà quan trọng và đặc biệt của trường Đại học Bách Khoa Hà Nội.",
+    scale: checkDeviceType() === 'mobile' ? "0.12 0.12 0.12" : "0.2 0.2 0.2",
+    position: checkDeviceType() === 'mobile' ? "-1.4 0.3 -5" : "-1.4 0.3 -5",
+  }
+]
 const popupText = document.querySelector("#popup");
 const spanPopupText = document.querySelector("#popup-text");
 const titlePopupText = document.querySelector(".title-popup-text");
@@ -419,36 +432,7 @@ function displayContent(data) {
     scene.appendChild(lightElement);
 
     // Describe of model
-    if (data?.text) {
-      const divElement = document.createElement("div");
-      divElement.id = "a-entity-describe";
-      divElement.classList.add("text-description-model");
 
-      const title = document.createElement("div");
-      title.classList.add("title-describe");
-      title.innerHTML = data?.title || "";
-
-      const content = document.createElement("div");
-      content.classList.add("content-describe");
-      content.innerHTML = data?.text || "";
-
-      divElement.appendChild(title);
-      divElement.appendChild(content);
-
-      if (content.textContent.length > 150) {
-        var trimmedText = content.textContent.slice(0, 150) + "...";
-        content.textContent = trimmedText;
-      }
-      divElement.addEventListener("click", function () {
-        openPopupText(data);
-      });
-
-      canvas.appendChild(divElement);
-    }
-
-    video && video.remove();
-    image && image.remove();
-    text && text.remove();
   } else if (data?.type === "image" && !image) {
     // Image
     const imageEntity = document.createElement("img");
@@ -499,7 +483,39 @@ function displayContent(data) {
     image && image.remove();
     video && video.remove();
     modelDescribe && modelDescribe.remove();
+ 
   }
+
+  if (data?.text) {
+    const divElement = document.createElement("div");
+    divElement.id = "a-entity-describe";
+    divElement.classList.add("text-description-model");
+
+    const title = document.createElement("div");
+    title.classList.add("title-describe");
+    title.innerHTML = data?.title || "";
+
+    const content = document.createElement("div");
+    content.classList.add("content-describe");
+    content.innerHTML = data?.text || "";
+
+    divElement.appendChild(title);
+    divElement.appendChild(content);
+
+    if (content.textContent.length > 150) {
+      var trimmedText = content.textContent.slice(0, 150) + "...";
+      content.textContent = trimmedText;
+    }
+    divElement.addEventListener("click", function () {
+      openPopupText(data);
+    });
+
+    canvas.appendChild(divElement);
+  }
+
+  video && video.remove();
+  image && image.remove();
+  text && text.remove();
   // Remote all after 5s don't scan QR
   timeShow = setTimeout(() => {
     model && model.remove();
